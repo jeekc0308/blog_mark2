@@ -1,0 +1,22 @@
+{
+  "name": "blog_mark2",
+  "version": "1.0.0",
+  "description": "이 프로젝트는 제 블로그를 만들기 위해 만들어졌습니다. 만약 참조하실 부분이 있다면 코드를 참조하셔도 좋습니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeekc0308/blog_mark2.git"
+  },
+  "author": "Doyeong Kim",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/jeekc0308/blog_mark2/issues"
+  },
+  "homepage": "https://github.com/jeekc0308/blog_mark2#readme",
+  "devDependencies": {
+    "mocha": "^6.0.2"
+  }
+}
