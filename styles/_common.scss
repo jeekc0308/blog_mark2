@@ -1,0 +1,14 @@
+$color_primary: #617aa0;
+$color_primary_dark: #303c4f;
+$color_primary_light: #cbdaef;
+
+$color_link: #1f78f4;
+
+a {
+    text-decoration: none;
+    color: $color_link;
+}
+a.unset {
+    all: unset;
+    cursor: pointer;
+}

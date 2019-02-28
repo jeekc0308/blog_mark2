@@ -1,0 +1,33 @@
+@import 'common';
+
+.navigation-bar {
+    background: white;
+    box-shadow: 0 0 20px $color_primary;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: left;
+}
+.navigation-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.navigation-menu-item {
+    float: left;
+}
+.navigation-menu-item-link {
+    display: block;
+    padding: 1em 1.7em;
+    transition: all 0.25s;
+}
+.navigation-menu-item-link:hover, .navigation-menu-item-link:active {
+    background: $color_primary;
+    color: white;
+}
+.navigation-brand {
+    padding: 0 1em;
+}

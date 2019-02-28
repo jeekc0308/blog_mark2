@@ -1,0 +1,19 @@
+@import 'common';
+
+.form-button {
+    all: unset;
+    background: $color_primary;
+    font-size: 1em;
+    padding: 0.7em 1.5em;
+    color: #ffffff;
+    transition: all 0.5s;
+}
+.form-button:hover, .form-button:active {
+    background: $color_primary_dark;
+}
+.form-button-tooltip {
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    padding: 0.75em;
+    font-size: 1em;
+}

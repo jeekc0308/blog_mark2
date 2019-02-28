@@ -1,0 +1,25 @@
+@import 'common';
+
+$card-radius: 0.5em;
+.articleList-card {
+    max-width: 400px;
+    border-radius: $card-radius;
+    box-shadow: 0 0 20px rgb(125,125,125);
+}
+.articleList-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $card-radius $card-radius 0 0;
+    background: gray;
+}
+.articleList-card-body {
+    padding: 0.75em;
+}
+.articleList-card-title {
+    margin: 0;
+    font-size: 1.3em;
+}
+.articleList-card-category, .articleList-card-info {
+    color: $color_primary;
+}
