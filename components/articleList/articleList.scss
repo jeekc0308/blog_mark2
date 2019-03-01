@@ -5,6 +5,7 @@ $card-radius: 0.5em;
     max-width: 400px;
     border-radius: $card-radius;
     box-shadow: 0 0 20px rgb(125,125,125);
+    margin: 0.5em;
 }
 .articleList-card-img {
     width: 100%;
@@ -22,4 +23,10 @@ $card-radius: 0.5em;
 }
 .articleList-card-category, .articleList-card-info {
     color: $color_primary;
+}
+.articleList-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
