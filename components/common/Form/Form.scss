@@ -32,4 +32,6 @@
     border: 3px solid;
     border-image: $color_grident;
     border-image-slice: 1;
+    box-sizing : border-box;
+    width: 100%;
 }

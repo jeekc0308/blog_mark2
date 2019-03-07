@@ -1,0 +1,12 @@
+@import 'common';
+.login-form {
+    margin: auto;
+    max-width: 640px;
+    padding: 3em 1em;
+    border-top: 10px solid;
+    border-image: $color_grident;
+    border-image-slice: 1;
+}
+.login-form * {
+    margin: 0.25em;
+}

@@ -76,7 +76,11 @@ export default class registerForm extends Component {
                         value={this.state.password_accept}
                     />
                 </FormBody>
-                <p>{this.state.password == this.state.password_accept ? "비밀번호가 같습니다." : "비밀번호가 다릅니다."}</p>
+                {
+                    this.state.password == this.state.password_accept 
+                    ? <span style={{color: "#1460bc"}}>비밀번호가 같습니다.</span> 
+                    : <span style={{color: "#bc1414"}}>비밀번호가 다릅니다.</span>
+                }
                 <FormBody>
                     <span>닉네임</span>
                     <Input

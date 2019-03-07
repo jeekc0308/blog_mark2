@@ -1,5 +1,3 @@
-import Layout from '../../components/layout';
-
 import React, { Component } from 'react';
 import RegisterForm from '../../components/registerForm';
 import { FixedBody, Input, Button, FormBody } from '../../components/common/Form';
