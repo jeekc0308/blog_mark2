@@ -8,9 +8,15 @@ import '../../styles/login.scss';
 export default class LoginPage extends Component {
     state = {
         username: '',
-        password: ''
+        password: '',
+        show: false
     };
-
+    componentDidMount() {
+       User.RedirectIfLogined()
+       .then(value => {
+           this.setState({show: value});
+       })
+    }
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -30,6 +36,7 @@ export default class LoginPage extends Component {
         })
     }
     render () {
+        if (!this.state.show) return null;
         return (
             <FixedBody>
                 <form className="login-form" onSubmit={this.formSubmit}>

@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import RegisterForm from '../../components/registerForm';
 import { FixedBody, Input, Button, FormBody } from '../../components/common/Form';
-import { Code } from '../../APICall';
+import { Code, User } from '../../APICall';
 
 class Register extends Component {
     state = {
         code: '',
-        verified: false
+        verified: false,
+        show: false
     };
+    componentDidMount() {
+        User.RedirectIfLogined()
+        .then(show => {
+            this.setState({show});
+        })
+    }
     verifyCode = () => {
         if (!this.state.code)
             return;
@@ -34,6 +41,7 @@ class Register extends Component {
         });
     }
     render() {
+        if (!this.state.show) return null;
         const notVerifed = (
             <FixedBody>
                 <h1>회원가입</h1>

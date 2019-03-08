@@ -1,5 +1,6 @@
 import axios from 'axios';
 import GetURL from './GetURL';
+import Router from 'next/router';
 
 function Register(username, password, nickname) {
     return axios.post(GetURL('/user'), { username, password, nickname });
@@ -20,7 +21,32 @@ async function Auth(username, password) {
         }
     }
 }
-function isLogined() {
-
+async function isLogined() {
+    const jwt = localStorage.getItem('jwt');
+    if (!jwt) return false;
+    try {
+        await axios.get(GetURL('/user/auth/validate'), {
+            headers: {
+                "x-access-token": jwt
+            }
+        });
+        return true;
+    } catch (e) {
+        return false;
+    }
 }
-export default { Register, Auth }
+async function RedirectIfNotLogined(redirectTo="/") {
+    if (!await isLogined()) {
+        Router.push(redirectTo);
+        return false;
+    }
+    return true;
+}
+async function RedirectIfLogined(redirectTo="/") {
+    if (await isLogined()) {
+        Router.push(redirectTo);
+        return false;
+    }
+    return true;
+}
+export default { Register, Auth, isLogined, RedirectIfNotLogined, RedirectIfLogined }
