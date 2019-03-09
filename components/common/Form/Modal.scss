@@ -2,14 +2,37 @@
 
 .modal-wrap {
     position: fixed;
-    top: 30%;
+    top: 10%;
     z-index: 3100;
     width: 100%;
     .modal-body {
         background: white;
+        max-width: 600px;
         margin: auto;
     }
     .modal-header {
         background: $color_primary_light;
+        padding: 0.5em;
+        display: flex;
+        align-content: center;
+    }
+    .modal-close {
+        display: block;
+        color: black;
+        font-size: 1.2em;
+        margin-left: auto;
+        padding: 0 1em;
+        border: 1px solid transparent;
+        border-radius: 0.25em;
+        transition: all 0.2s;
+    }
+    .modal-content {
+        padding: 1em;
+        overflow: hidden;
+    }
+    .modal-close:hover {
+        background: #c43838;
+        border-color: #8e2626;
+        color: white;
     }
 }

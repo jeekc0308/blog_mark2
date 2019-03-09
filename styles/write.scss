@@ -15,12 +15,19 @@
             margin-left: auto;
         }
         .menu * {
+            margin: 0.1em;
+        }
+        .menu a {
             display: block;
             margin: 0.1em 0.2em;
             padding: 0.5em;
             border: 1px solid transparent;
             border-radius: 0.25em;
             transition: all 0.2s;
+        }
+        .menu input {
+            display: inline-block;
+            width: auto;
         }
         .menu a:hover {
             background: rgba(0, 0, 0, 0.5);

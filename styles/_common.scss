@@ -18,6 +18,7 @@ a.unset {
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
+    margin: 0;
 }
 .fadein-effect{-webkit-animation:fadein .5s cubic-bezier(.25,.46,.45,.94) both;animation:fadein .5s cubic-bezier(.25,.46,.45,.94) both}
 .alpha-background {

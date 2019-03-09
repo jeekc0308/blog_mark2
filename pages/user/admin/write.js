@@ -1,13 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import marked from 'marked';
-import {Modal} from '../../../components/common/Form';
-
+import { Post } from '../../../APICall';
+import { Input } from '../../../components/common/Form';
 import '../../../styles/write.scss';
+import Router from 'next/router';
 
 export default class WritePage extends Component {
     state = {
         post: "",
-        postToHTML: ""
+        postToHTML: "",
+        title: "",
+        url: ""
     };
 
     writeChanged = e => {
@@ -18,14 +21,31 @@ export default class WritePage extends Component {
             });
         });
     }
+    handleChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+    upload = e => {
+        e.preventDefault();
+        const { post, title, url } = this.state;
+        Post.UploadPost(post, title, url)
+            .then(value => {
+                if (!value.success) {
+                    alert(value.message);
+                    return;
+                }
+                Router.push('/post/' + url);
+            });
+    }
     render() {
         return (
             <div className="write-page wrap">
-                <ImageUploadModal />
                 <div className="write-page header">
                     <div className="write-page menu">
-                        <a href="#" rel="이미지 업로드">이미지 업로드</a>
-                        <a href="#" rel="업로드">업로드</a>
+                        <Input placeholder="제목" onChange={this.handleChange} value={this.state.title} name="title" />
+                        <Input placeholder="URL 주소" onChange={this.handleChange} value={this.state.url} name="url" />
+                        <a href="#" rel="업로드" onClick={this.upload}>업로드</a>
                     </div>
                 </div>
                 <div className="write-page body">
@@ -40,16 +60,6 @@ export default class WritePage extends Component {
                     </div>
                 </div>
             </div>
-        )
-    }
-}
-
-class ImageUploadModal extends Component {
-    render() {
-        return (
-            <Modal title="이미지 업로드">
-                이미지 업로드
-            </Modal>
         )
     }
 }
