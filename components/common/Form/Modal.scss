@@ -1,0 +1,15 @@
+@import 'common';
+
+.modal-wrap {
+    position: fixed;
+    top: 30%;
+    z-index: 3100;
+    width: 100%;
+    .modal-body {
+        background: white;
+        margin: auto;
+    }
+    .modal-header {
+        background: $color_primary_light;
+    }
+}

@@ -1,0 +1,58 @@
+@import "common";
+
+.write-page {
+    .wrap {
+        display: flex;
+    }
+    .header {
+        background: #bec8d8;
+        padding: 0.25em;
+        .menu {
+            display: flex;
+            flex-direction: row;
+        }
+        .menu *:last-child {
+            margin-left: auto;
+        }
+        .menu * {
+            display: block;
+            margin: 0.1em 0.2em;
+            padding: 0.5em;
+            border: 1px solid transparent;
+            border-radius: 0.25em;
+            transition: all 0.2s;
+        }
+        .menu a:hover {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: $color_primary;
+            color: white;
+        }
+    }
+    .body {
+        overflow: auto;
+        .write-wrap {
+            margin: 1em;
+        }
+        .write {
+            border: 1px solid $color_primary_light;
+            min-height: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: auto;
+            padding: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .preview-wrap {
+            margin: 1em;
+        }
+        .preview {
+            border: 1px solid $color_primary_light;
+            overflow: auto;
+            min-height: 200px;
+            max-height: 500px;
+            padding: 1em;
+        }
+    }
+    
+}

@@ -20,7 +20,15 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 .fadein-effect{-webkit-animation:fadein .5s cubic-bezier(.25,.46,.45,.94) both;animation:fadein .5s cubic-bezier(.25,.46,.45,.94) both}
-
+.alpha-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 3000;
+}
 @keyframes fadein {
     0% {
         opacity: 0;
